@@ -21,7 +21,7 @@
 		<version.maven.plugin.javadoc>2.10.3</version.maven.plugin.javadoc>
 		<version.maven.plugin.release>2.5.2</version.maven.plugin.release>
 		<version.maven.plugin.source>2.4</version.maven.plugin.source>
-		<version.plugin.nexus>1.6.5</version.plugin.nexus>
+		<version.plugin.nexus>1.6.13</version.plugin.nexus>
 	</properties>
 
 	<build>
