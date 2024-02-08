@@ -44,8 +44,15 @@
 					<serverId>sonatype-nexus-staging</serverId>
 					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
 					<autoReleaseAfterClose>true</autoReleaseAfterClose>
-					<stagingProfileId>${staingProfileId}</stagingProfileId>
+					<!--<stagingProfileId>${staingProfileId}</stagingProfileId>-->
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.thoughtworks.xstream</groupId>
+						<artifactId>xstream</artifactId>
+						<version>1.4.15</version> <!-- keep this version -->
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
