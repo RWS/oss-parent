@@ -122,7 +122,12 @@
 						<artifactId>maven-gpg-plugin</artifactId>
 						<version>${version.maven.plugin.gpg}</version>
 						<configuration>
-							<executable>gpg2</executable>
+							<executable>gpg</executable>
+							<!-- Prevent gpg from using pinentry programs -->
+							<gpgArguments>
+								<arg>--pinentry-mode</arg>
+								<arg>loopback</arg>
+							</gpgArguments>
 						</configuration>
 						<executions>
 							<execution>
