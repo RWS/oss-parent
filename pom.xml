@@ -32,9 +32,19 @@
 				<version>${version.maven.plugin.release}</version>
 				<configuration>
 					<releaseProfiles>release</releaseProfiles>
-					<goals>deploy nexus-staging:release</goals>
+					<goals>deploy</goals>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.sonatype.central</groupId>
+				<artifactId>central-publishing-maven-plugin</artifactId>
+				<version>0.8.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<publishingServerId>central</publishingServerId>
+				</configuration>
+			</plugin>
+			<!--
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
@@ -43,10 +53,11 @@
 				<configuration>
 					<serverId>sonatype-nexus-staging</serverId>
 					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
-					<!--<stagingProfileId>${staingProfileId}</stagingProfileId>-->
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>-->
+					<!--<stagingProfileId>${staingProfileId}</stagingProfileId>--><!--
 				</configuration>
 			</plugin>
+			-->
 		</plugins>
 	</build>
 
@@ -54,7 +65,8 @@
 		<repository>
 			<id>sonatype-nexus-snapshots</id>
 			<name>Sonatype Nexus Snapshots</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<!--<url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+			<url>https://central.sonatype.com/repository/maven-snapshots/</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
@@ -64,6 +76,7 @@
 		</repository>
 	</repositories>
 
+	<!--
 	<distributionManagement>
 		<repository>
 			<id>sonatype-nexus-staging</id>
@@ -76,13 +89,14 @@
 			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
+	-->
 
 	<scm>
 		<url>https://github.com/sdl/oss-parent.git</url>
 		<connection>scm:git:https://github.com/sdl/oss-parent.git</connection>
 		<developerConnection>scm:git:git@github.com:sdl/oss-parent.git</developerConnection>
-	  <tag>HEAD</tag>
-  </scm>
+		<tag>HEAD</tag>
+	</scm>
 
 	<profiles>
 		<profile>
